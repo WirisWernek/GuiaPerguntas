@@ -9,7 +9,8 @@ app.get("/:nome/:lang", (req, res) => {
     let lang = req.params.lang;
     res.render("index", {
         nome: nome,
-        lang: lang
+        lang: lang,
+        msg: false
     });
 });
 
