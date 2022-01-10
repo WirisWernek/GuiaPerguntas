@@ -14,11 +14,19 @@
     <h2>Perguntas</h2>
     <p>Nome: <%= nome %></p>
     <p>Linguagem Favorita: <%= lang %></p>
+
+    <!-- if/else com  ejs-->
     <% if(msg){ %>
     <h3>Isso é uma mensagem de erro!</h3>
     <% }else{ %>
     <h3>Nenhum erro!</h3>
     <% }  %>
+
+    <!-- foreach com  ejs-->
+    <% produtos.forEach((element)=>{ %>
+    <p>Nome: <%= element.nome %></p>
+    <p>Preço: <%= element.preco %></p><br>
+    <% }) %>
 
 </body>
 
