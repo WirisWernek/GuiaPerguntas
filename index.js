@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.post("/salvarpergunta", (req, res) => {
+    res.send("Formulário Recebido!");
+});
+
 app.get("/perguntar", (req, res) => {
     res.render("perguntar");
 });
