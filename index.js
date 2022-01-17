@@ -1,6 +1,16 @@
 const express = require("express");
 const bodyparser = require("body-parser");
+const connection = require("./database/database");
 const app = express();
+// Database
+connection
+    .authenticate()
+    .then(() => {
+        console.log("Conexão realizada com sucesso");
+    })
+    .catch((msgErro) => {
+        console.log(msgErro);
+    })
 
 // setando EJS como engine de renderização de HTML
 app.set('view engine', 'ejs');
@@ -16,6 +26,8 @@ app.use(bodyparser.urlencoded({
 // permitindo body-parser entender json
 app.use(bodyparser.json());
 
+
+// Rotas
 app.get("/", (req, res) => {
     res.render("index");
 });
