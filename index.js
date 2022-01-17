@@ -30,7 +30,14 @@ app.use(bodyparser.json());
 
 // Rotas
 app.get("/", (req, res) => {
-    res.render("index");
+    Pergunta.findAll({
+        raw: true
+    }).then(perguntas => {
+        res.render("index", {
+            perguntas: perguntas
+        });
+    });
+
 });
 
 app.post("/salvarpergunta", (req, res) => {
