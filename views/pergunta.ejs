@@ -8,7 +8,7 @@
         <h1><%= pergunta.titulo %></h1>
         <p><%= pergunta.descricao %></p>
         <hr>
-        <form action="">
+        <form method="post" action="/salvarresposta">
             <h3>Responda</h3>
             <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
             <label for="corpo">Resposta:</label>
