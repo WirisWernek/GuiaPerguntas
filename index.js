@@ -58,6 +58,21 @@ app.get("/perguntar", (req, res) => {
     res.render("perguntar");
 });
 
+app.get("/pergunta/:id", (req, res) => {
+    let id = req.params.id;
+    Pergunta.findOne({
+        where: {
+            id: id
+        }
+    }).then((pergunta) => {
+        if (pergunta != undefined) {
+            res.render("pergunta");
+        } else {
+            res.redirect("/");
+        }
+    })
+})
+
 app.listen(5000, () => {
     console.log("App rodando");
 });
