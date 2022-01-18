@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
-const connection = new Sequelize('guia_perguntas', 'wiris', '1+1Wiris1+1', {
+const connection = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
 });

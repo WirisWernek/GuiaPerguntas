@@ -18,6 +18,7 @@
   "homepage": "https://github.com/WirisWernek/GuiaPerguntas#readme",
   "dependencies": {
     "body-parser": "^1.19.1",
+    "dotenv": "^14.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
